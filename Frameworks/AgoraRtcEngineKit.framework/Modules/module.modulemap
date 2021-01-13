@@ -1,0 +1,13 @@
+framework module AgoraRtcEngineKit {
+    header "AgoraRtcEngineKit.h"
+    header "AgoraConstants.h"
+    header "AgoraEnumerates.h"
+    header "AgoraMediaIO.h"
+    header "AgoraMediaMetadata.h"
+    header "AgoraAudioFrame.h"
+    header "AgoraObjects.h"
+    header "AgoraRtcChannel.h"
+    header "AgoraLogWriter.h"
+
+    export *
+}
