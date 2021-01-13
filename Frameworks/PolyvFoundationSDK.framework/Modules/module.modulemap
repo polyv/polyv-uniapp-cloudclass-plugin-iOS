@@ -1,0 +1,6 @@
+framework module PolyvFoundationSDK {
+  umbrella header "PolyvFoundationSDK.h"
+
+  export *
+  module * { export * }
+}

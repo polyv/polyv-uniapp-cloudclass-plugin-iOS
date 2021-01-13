@@ -1,0 +1,6 @@
+framework module PolyvCloudClassSDK {
+  umbrella header "PolyvCloudClassSDK.h"
+
+  export *
+  module * { export * }
+}
