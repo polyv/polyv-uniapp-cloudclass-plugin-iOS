@@ -1,0 +1,6 @@
+framework module PolyvIJKMediaFramework {
+  umbrella header "PolyvIJKMediaFramework.h"
+
+  export *
+  module * { export * }
+}
