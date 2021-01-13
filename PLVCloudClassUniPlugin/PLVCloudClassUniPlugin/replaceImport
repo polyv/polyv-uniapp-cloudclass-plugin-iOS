@@ -1,0 +1,44 @@
+#!/bin/bash
+# -------------------------------------------------------------------------------
+# Date:     2021/01/12
+# Author:   MissYasiky
+# Description: 该脚本用于把改为源码导入的头文件从 <xxx/yyy.h> 修改为 "yyy.h"
+# -------------------------------------------------------------------------------
+
+# 获取脚本所在路径
+SOURCE="$0"
+while [ -h "$SOURCE"  ]; do # resolve $SOURCE until the file is no longer a symlink
+    DIR="$( cd -P "$( dirname "$SOURCE"  )" && pwd  )"
+    SOURCE="$(readlink "$SOURCE")"
+    [[ $SOURCE != /*  ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+CURRENT_PATH="$( cd -P "$( dirname "$SOURCE"  )" && pwd  )"
+
+REPLACE_PATH="${CURRENT_PATH}/PolyvCloudClassUICode"
+cd ${REPLACE_PATH}
+
+
+function replaceImport(){
+  param_file=$1
+  if [ "${param_file##*.}"x = "h"x ]||[ "${param_file##*.}"x = "m"x ];then
+    echo "handlering file: ${param_file}"
+    sed -i '' 's$#import <Masonry/Masonry.h>$#import "Masonry.h"$' ${param_file}
+    sed -i '' 's$#import <SDWebImage/UIImageView+WebCache.h>$#import "UIImageView+WebCache.h"$' ${param_file}
+    sed -i '' 's$#import <SDWebImage/SDWebImageDownloader.h>$#import "SDWebImageDownloader.h"$' ${param_file}
+  fi
+}
+
+function read_dir(){
+  for file in `ls $1` #注意此处这是两个反引号，表示运行系统命令
+  do
+    dir_or_file=$1"/"$file
+    if [ -d ${dir_or_file} ] #注意此处之间一定要加上空格，否则会报错
+    then
+      read_dir ${dir_or_file}
+    else
+      replaceImport ${dir_or_file} #在此处处理文件即可
+    fi
+  done
+} 
+
+read_dir ${REPLACE_PATH}
