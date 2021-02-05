@@ -8,7 +8,7 @@
 
 ## 开发环境
 
-1. iOS 开发环境：Xcode 11.0+
+1. iOS 开发环境：Xcode 11.0+，cocoapod
 2. uni-app 开发环境：HBuilderX 2.8.0+
 
 
@@ -26,7 +26,15 @@
 
 ⚠️注意，SDK 包的与 HBuilderX 的版本一一对应，请根据你 HBuilderX 的版本下载对应的 SDK 包。本项目基于 v2.8.6 版本的 SDK 进行开发，建议不要使用跟该版本差异太大的版本。 
 
-将下载后的离线 SDK 包中的 SDK 文件夹放到当前项目的<u>根目录</u>下。
+将下载后的离线 SDK 包中的 SDK 文件夹放到当前项目同一层级的目录下。
+
+
+
+## 测试运行
+
+使用终端命令行进入工程目录，该目录下有`Podfile`文件，使用命令`pod install`安装依赖库。安装完成后进入子目录`PLVCloudClassUniPlugin`，该目录下也有`Podfile`文件，同样使用命令`pod install`安装依赖库。
+
+以上安装完成后，打开项目根目录，会生成白色图标的 `your_name.xcworkspace`工程入口，双击打开，可以开始编译测试运行。
 
 
 
