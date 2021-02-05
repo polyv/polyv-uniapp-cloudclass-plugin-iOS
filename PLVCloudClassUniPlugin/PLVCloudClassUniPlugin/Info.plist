@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>请允许使用麦克风，以在连麦中进行录音</string>
+	<key>NSCameraUsageDescription</key>
+	<string>请允许使用摄像头，以在连麦中进行拍摄</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>请允许使用相册，以在聊天中分享图片</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

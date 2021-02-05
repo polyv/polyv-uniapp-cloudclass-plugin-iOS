@@ -8,7 +8,7 @@
 
 #import "PLVChatroomController.h"
 #import "Masonry.h"
-#import "SDWebImageDownloader.h"
+
 #import <PolyvFoundationSDK/PLVFdUtil.h>
 #import <PolyvFoundationSDK/PLVDataUtil.h>
 #import <PolyvCloudClassSDK/PLVLiveVideoConfig.h>
@@ -1036,7 +1036,9 @@ PLVSocketChatRoomObject *createTeacherAnswerObject() {
     PLVAuthorizationStatus status = [PLVAuthorizationManager authorizationStatusWithType:PLVAuthorizationTypeMediaVideo];
     switch (status) {
         case PLVAuthorizationStatusAuthorized: {
-            [weakSelf openCamera];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf openCamera];
+            });
         } break;
         case PLVAuthorizationStatusDenied:
         case PLVAuthorizationStatusRestricted:
@@ -1046,7 +1048,9 @@ PLVSocketChatRoomObject *createTeacherAnswerObject() {
         case PLVAuthorizationStatusNotDetermined: {
             [PLVAuthorizationManager requestAuthorizationWithType:PLVAuthorizationTypeMediaVideo completion:^(BOOL granted) {
                 if (granted) {
-                    [weakSelf openCamera];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [weakSelf openCamera];
+                    });
                 }else {
                     [weakSelf performSelector:@selector(presentAlertController:) withObject:@"你没开通访问相机的权限，如要开通，请移步到:设置->隐私->相机 开启" afterDelay:0.1];
                 }

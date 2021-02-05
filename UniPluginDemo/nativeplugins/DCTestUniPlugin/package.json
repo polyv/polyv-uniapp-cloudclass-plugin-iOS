@@ -1,0 +1,23 @@
+{
+	"name": "TestUniPlugin",
+	"id": "DCTestUniPlugin",
+	"version": "1.0.0",
+	"description": "uni示例插件",
+	"_dp_type": "nativeplugin",
+	"_dp_nativeplugin": {
+		"ios": {
+			"plugins": [{
+				"type": "module",
+				"name": "DCTestUniPlugin-TestModule",
+				"class": "TestModule"
+			}, {
+				"type": "component",
+				"name": "dc-testmap",
+				"class": "TestComponent"
+			}],
+			"frameworks": ["MapKit.framework"],
+			"integrateType": "framework",
+			"deploymentTarget": "9.0"
+		}
+	}
+}
