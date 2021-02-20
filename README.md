@@ -24,9 +24,26 @@
 
 该项目想正常运行，需先到 uni-app 的官网下载离线 SDK 包 —— [下载链接](https://nativesupport.dcloud.net.cn/AppDocs/download/ios)。
 
-⚠️注意，SDK 包的与 HBuilderX 的版本一一对应，请根据你 HBuilderX 的版本下载对应的 SDK 包。本项目基于 v2.8.6 版本的 SDK 进行开发，建议不要使用跟该版本差异太大的版本。 
+⚠️注意，SDK 包的与 HBuilderX 的版本一一对应，请根据你 HBuilderX 的版本下载对应的 SDK 包。本项目基于 v2.8.6 版本的 SDK 进行开发，且已适配 v3.0.5 版本。 
 
-将下载后的离线 SDK 包中的 SDK 文件夹放到当前项目同一层级的目录下。
+将下载后的离线 SDK 包中的 SDK 文件夹放到当前项目同一层级的目录下。如下面所示：
+
+```
+.
+├── PLVUniAppCloudClassdPlugin-iOS
+│   ├── HBuilder
+│   ├── HBuilder-Hello
+│   ├── HBuilder-uniPlugin.xcodeproj
+│   ├── PLVCloudClassUniPlugin
+│   ├── Podfile
+│   ├── README.md
+│   └── UniPluginDemo
+└── SDK
+    ├── Bundles
+    ├── Libs
+    ├── control.xml
+    └── inc
+```
 
 
 
