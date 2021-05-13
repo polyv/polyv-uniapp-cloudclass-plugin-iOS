@@ -9,6 +9,7 @@
 #import "PLVCloudClassUtils.h"
 #import <PolyvCloudClassSDK/PLVLiveVideoConfig.h>
 #import <PolyvCloudClassSDK/PLVWVodVideoConfig.h>
+#import "PolyvUniCloudClassConfig.h"
 
 static NSString *viewerId;
 static NSString *viewerName;
@@ -63,16 +64,31 @@ WX_EXPORT_METHOD(@selector(setViewerInfo:callback:))
     NSString *optViewerName = [PLVCloudClassUtils stringValueWithDictionary:options forKey:@"viewerName" defaultValue:nil];
     NSString *param4 = [PLVCloudClassUtils stringValueWithDictionary:options forKey:@"param4" defaultValue:nil];
     NSString *param5 = [PLVCloudClassUtils stringValueWithDictionary:options forKey:@"param5" defaultValue:nil];
-
+    
     viewerId = optViewerID;
     viewerName = optViewerName;
     viewerAvatar = optViewerImg;
-
+    
     //配置直播后台统计参数
     [PLVLiveVideoConfig setViewLogParam:viewerId param2:viewerName param4:param4 param5:param5];
     //配置点播后台统计参数
     [PLVWVodVideoConfig setViewLogViewerId:viewerId viewerName:viewerName];
+    
+    [self callbackResultOnce:callback isSucceed:YES errMsg:@""];
+}
 
+
+/**
+ 设置跑马灯相关参数设置参数
+ */
+WX_EXPORT_METHOD(@selector(setMarqueeConfig:callback:))
+
+- (void)setMarqueeConfig:(NSDictionary*)options
+                callback:(WXModuleKeepAliveCallback)callback {
+    NSString *code = [PLVCloudClassUtils stringValueWithDictionary:options forKey:@"code" defaultValue:nil];
+    if([PLVCloudClassUtils isValidString:code]) {
+        [PolyvUniCloudClassConfig sharedInstance].code = code;
+    }
     [self callbackResultOnce:callback isSucceed:YES errMsg:@""];
 }
 
@@ -80,7 +96,7 @@ WX_EXPORT_METHOD(@selector(setViewerInfo:callback:))
                 isSucceed:(BOOL)isSucceed
                    errMsg:(NSString*)errMsg {
     if (!isSucceed) {
-//        NSLog(@"errMsg: %@",errMsg);
+        //        NSLog(@"errMsg: %@",errMsg);
     }
     
     if(callback){

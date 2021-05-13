@@ -32,6 +32,8 @@
 		00ED531A25B052EC009D48C4 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 00ED530125B052EC009D48C4 /* ViewController+MASAdditions.h */; };
 		00ED531B25B052EC009D48C4 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ED530225B052EC009D48C4 /* MASViewConstraint.m */; };
 		00ED531C25B052EC009D48C4 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ED530325B052EC009D48C4 /* MASViewAttribute.m */; };
+		3630E1A6264BB9A800C72255 /* PolyvUniCloudClassConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 3630E1A4264BB9A800C72255 /* PolyvUniCloudClassConfig.h */; };
+		3630E1A7264BB9A800C72255 /* PolyvUniCloudClassConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3630E1A5264BB9A800C72255 /* PolyvUniCloudClassConfig.m */; };
 		520C7565B9E313388150603F /* Pods_PLVCloudClassUniPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD82CC0082E9587F94EB296B /* Pods_PLVCloudClassUniPlugin.framework */; };
 		8618742A2576336800F79891 /* ZJZDanMuDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 861873622576336800F79891 /* ZJZDanMuDefine.h */; };
 		8618742B2576336800F79891 /* ZJZDanMu.m in Sources */ = {isa = PBXBuildFile; fileRef = 861873632576336800F79891 /* ZJZDanMu.m */; };
@@ -229,6 +231,8 @@
 		00ED530125B052EC009D48C4 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		00ED530225B052EC009D48C4 /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
 		00ED530325B052EC009D48C4 /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		3630E1A4264BB9A800C72255 /* PolyvUniCloudClassConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PolyvUniCloudClassConfig.h; sourceTree = "<group>"; };
+		3630E1A5264BB9A800C72255 /* PolyvUniCloudClassConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PolyvUniCloudClassConfig.m; sourceTree = "<group>"; };
 		3CE2BD5AD6BBC5D095C96699 /* Pods-PLVCloudClassUniPlugin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLVCloudClassUniPlugin.debug.xcconfig"; path = "Target Support Files/Pods-PLVCloudClassUniPlugin/Pods-PLVCloudClassUniPlugin.debug.xcconfig"; sourceTree = "<group>"; };
 		861873622576336800F79891 /* ZJZDanMuDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJZDanMuDefine.h; sourceTree = "<group>"; };
 		861873632576336800F79891 /* ZJZDanMu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJZDanMu.m; sourceTree = "<group>"; };
@@ -464,6 +468,15 @@
 				C13F12B30409F96E2E77FBBB /* Pods-PLVCloudClassUniPlugin.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		3630E1A3264BB95400C72255 /* PolyvUniCloudClassCommon */ = {
+			isa = PBXGroup;
+			children = (
+				3630E1A4264BB9A800C72255 /* PolyvUniCloudClassConfig.h */,
+				3630E1A5264BB9A800C72255 /* PolyvUniCloudClassConfig.m */,
+			);
+			path = PolyvUniCloudClassCommon;
 			sourceTree = "<group>";
 		};
 		8618735F2576336800F79891 /* PolyvCloudClassUICode */ = {
@@ -990,6 +1003,7 @@
 		86A9DB59257499B3000C4C69 /* PLVCloudClassUniPlugin */ = {
 			isa = PBXGroup;
 			children = (
+				3630E1A3264BB95400C72255 /* PolyvUniCloudClassCommon */,
 				00ED52E925B052EC009D48C4 /* ThirdPart */,
 				8618735F2576336800F79891 /* PolyvCloudClassUICode */,
 				8694CA372578854300DAB6A7 /* PLVCloudClassConfigModule.h */,
@@ -1048,6 +1062,7 @@
 				861874B02576336900F79891 /* PLVPPTLiveMediaViewController.h in Headers */,
 				861874B92576336900F79891 /* PLVPPTMediaProtocol.h in Headers */,
 				8618745D2576336800F79891 /* ZPhotoCollectionFooterView.h in Headers */,
+				3630E1A6264BB9A800C72255 /* PolyvUniCloudClassConfig.h in Headers */,
 				869405722575DE7600170560 /* PLVCloudClassUtils.h in Headers */,
 				8618742F2576336800F79891 /* FTPageController.h in Headers */,
 				00ED531A25B052EC009D48C4 /* ViewController+MASAdditions.h in Headers */,
@@ -1298,6 +1313,7 @@
 				8618747E2576336900F79891 /* PLVLiveInfoViewController.m in Sources */,
 				861874412576336800F79891 /* PLVEmojiManager.m in Sources */,
 				8694CA3E2578854300DAB6A7 /* PLVCloudClassConfigModule.m in Sources */,
+				3630E1A7264BB9A800C72255 /* PolyvUniCloudClassConfig.m in Sources */,
 				00ED531625B052EC009D48C4 /* View+MASAdditions.m in Sources */,
 				861874C92576336900F79891 /* PLVPlayerInputView.m in Sources */,
 				8618749B2576336900F79891 /* PLVChatroomCustomKouCell.m in Sources */,
@@ -1438,8 +1454,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3CE2BD5AD6BBC5D095C96699 /* Pods-PLVCloudClassUniPlugin.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8BMZBNN3Q5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1454,6 +1473,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = plv.PLVCloudClassUniPlugin;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1467,8 +1487,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C13F12B30409F96E2E77FBBB /* Pods-PLVCloudClassUniPlugin.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8BMZBNN3Q5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1483,6 +1506,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = plv.PLVCloudClassUniPlugin;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

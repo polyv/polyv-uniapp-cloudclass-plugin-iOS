@@ -13,7 +13,7 @@
 #import <PolyvCloudClassSDK/PLVVideoMarquee.h>
 #import <PolyvCloudClassSDK/PLVLiveVideoAPI.h>
 #import <PolyvFoundationSDK/PolyvFoundationSDK.h>
-
+#import "PolyvUniCloudClassConfig.h"
 #define CloudClassBaseMediaErrorDomain @"net.polyv.cloudClassBaseMediaError"
 
 @interface PLVBaseMediaViewController () <PLVPlayerSkinViewDelegate, PLVPlayerSkinMoreViewDelegate, PLVPlayerControllerDelegate>
@@ -471,7 +471,9 @@
         } break;
         case PLVLiveMarqueeTypeURL: {
             if (channel.marquee) {
-                [PLVLiveVideoAPI loadCustomMarquee:[NSURL URLWithString:channel.marquee] withChannelId:channel.channelId.unsignedIntegerValue userId:channel.userId code:@"" completion:^(BOOL valid, NSDictionary *marqueeDict) {
+                NSString *code = [PolyvUniCloudClassConfig sharedInstance].code;
+                code = code ? code : @"";
+                [PLVLiveVideoAPI loadCustomMarquee:[NSURL URLWithString:channel.marquee] withChannelId:channel.channelId.unsignedIntegerValue userId:channel.userId code:code completion:^(BOOL valid, NSDictionary *marqueeDict) {
                     if (valid) {
                         completion([PLVMarqueeModel marqueeModelWithMarqueeDict:marqueeDict], nil);
                     } else {
